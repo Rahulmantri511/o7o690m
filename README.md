@@ -7,7 +7,7 @@ WindScope answers the two questions the desk has to settle before the day-ahead 
 1. **What did the latest wind forecast say when we had to decide?** For each delivery day it shows the forecast run that was available at the decision cut-off (by default 11:00 UK time on D-1, the GB day-ahead auction gate closure), plotted against what the wind actually did.
 2. **How far can we trust it?** Forecast error over every delivery day whose purchase decision fell in January 2026, broken down by lead time and hour of day, and turned into a concrete purchasing rule ("plan wind = forecast − X GW to cover 90% of hours").
 
-> **Live app:** _to be added after deployment_ · **Video:** _to be added_
+> **Live app (Vercel):** https://o7o690m.vercel.app · **Code:** https://github.com/Rahulmantri511/o7o690m · **Video:** _to be added_
 
 ---
 
@@ -103,6 +103,9 @@ Error grows with lead time, from about 1.7 GW at 0–6 h to about 2.4 GW at 48 h
 │   │   └── styles/               Design tokens (light/dark) and global styles
 │   ├── nginx.conf                SPA + /api reverse proxy for the Docker image
 │   └── Dockerfile
+├── api/index.py                  Vercel serverless entry point (wraps the FastAPI app)
+├── vercel.json                   Vercel build: static React app + Python function, SPA rewrites
+├── requirements.txt              Python runtime deps for the Vercel function
 ├── docker-compose.yml            backend :8000 + frontend :8080
 ├── Makefile                      install / dev / test / lint / snapshot / up
 └── .github/workflows/ci.yml      Lint, type-check, test, build, docker build
@@ -136,6 +139,14 @@ make check          # ruff, mypy --strict, pytest (+coverage), eslint, tsc, vite
 ```
 
 The backend has 37 tests at about 96% coverage. The frontend tests cover formatting, URL-state parsing, insight text and the API client.
+
+### Deployment (Vercel)
+
+The live app is deployed on Vercel at **https://o7o690m.vercel.app**. The React build is served as static files and `api/index.py` runs the FastAPI app as a Python function (see `vercel.json`). To deploy your own copy:
+
+```bash
+vercel link && vercel deploy --prod
+```
 
 ### Configuration
 
