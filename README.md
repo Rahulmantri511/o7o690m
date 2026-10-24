@@ -7,7 +7,7 @@ WindScope answers the two questions the desk has to settle before the day-ahead 
 1. **What did the latest wind forecast say when we had to decide?** For each delivery day it shows the forecast run that was available at the decision cut-off (by default 11:00 UK time on D-1, the GB day-ahead auction gate closure), plotted against what the wind actually did.
 2. **How far can we trust it?** Forecast error over every delivery day whose purchase decision fell in January 2026, broken down by lead time and hour of day, and turned into a concrete purchasing rule ("plan wind = forecast − X GW to cover 90% of hours").
 
-> **Live app (Vercel):** https://o7o690m.vercel.app · **Code:** https://github.com/Rahulmantri511/o7o690m · **Video:** _to be added_
+> **Live app (Vercel):** https://o7o690m.vercel.app · **Code:** https://github.com/Rahulmantri511/o7o690m · **Video:** https://www.youtube.com/watch?v=g-e-hKhxf6Y
 
 ---
 
