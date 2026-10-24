@@ -1,0 +1,64 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.defs {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.defs dt {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: var(--space-3);
+}
+
+.defs dt:first-child {
+  margin-top: 0;
+}
+
+.defs dd {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.prose {
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: var(--space-3);
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

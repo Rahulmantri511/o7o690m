@@ -1,0 +1,145 @@
+/*
+ * WindScope design tokens.
+ * Direction: warm off-white "paper" with hairline rules and mono micro-labels (after hex.tech),
+ * terminal-style KPI ticker (after matveyan.com). UI chrome stays monochrome; colour is reserved
+ * for data. Series colours are validated for CVD separation and contrast in both modes.
+ */
+:root {
+  color-scheme: light;
+
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --paper: #f7f7f5;
+  --paper-dot: rgba(11, 11, 11, 0.07);
+  --surface: #fcfcfb;
+  --surface-sunken: #f1f0ec;
+  --surface-hover: rgba(11, 11, 11, 0.035);
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --ink-muted: #807e78;
+  --rule: #e4e3dc;
+  --rule-strong: #c3c2b7;
+  --ring: rgba(11, 11, 11, 0.1);
+  --focus: #2a78d6;
+  --inverse-bg: #0b0b0b;
+  --inverse-ink: #f7f7f5;
+
+  /* Data */
+  --series-actual: #2a78d6;
+  --series-forecast: #eb6834;
+  --series-band: rgba(235, 104, 52, 0.12);
+  --series-revision: #b5b3aa;
+  --chart-grid: #e8e7e0;
+  --chart-axis: #c3c2b7;
+  --diverge-over: #e34948; /* forecast above actual: shortfall risk */
+  --diverge-under: #2a78d6; /* forecast below actual: surplus */
+  --heat-0: #e6eefa;
+  --heat-1: #b7d3f6;
+  --heat-2: #86b6ef;
+  --heat-3: #5598e7;
+  --heat-4: #2a78d6;
+  --heat-5: #1c5cab;
+
+  /* Status (always paired with icon + label) */
+  --good: #0a7d0a;
+  --warning-bg: #fdf3dd;
+  --warning-ink: #7a4f00;
+  --critical: #c23030;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-pop: 0 1px 2px rgba(11, 11, 11, 0.06), 0 8px 24px -8px rgba(11, 11, 11, 0.18);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+
+  --page-max: 1320px;
+  --gutter: clamp(16px, 3vw, 32px);
+  --header-h: 60px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0d0d0d;
+    --paper-dot: rgba(255, 255, 255, 0.06);
+    --surface: #171716;
+    --surface-sunken: #1f1f1d;
+    --surface-hover: rgba(255, 255, 255, 0.04);
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --ink-muted: #8f8d86;
+    --rule: #2a2a28;
+    --rule-strong: #3d3d3a;
+    --ring: rgba(255, 255, 255, 0.1);
+    --focus: #3987e5;
+    --inverse-bg: #f0efec;
+    --inverse-ink: #0d0d0d;
+    --series-actual: #3987e5;
+    --series-forecast: #d95926;
+    --series-band: rgba(217, 89, 38, 0.18);
+    --series-revision: #55544f;
+    --chart-grid: #262624;
+    --chart-axis: #3d3d3a;
+    --diverge-over: #e66767;
+    --diverge-under: #3987e5;
+    --heat-0: #1b2533;
+    --heat-1: #184f95;
+    --heat-2: #1c5cab;
+    --heat-3: #256abf;
+    --heat-4: #3987e5;
+    --heat-5: #6da7ec;
+    --good: #0ca30c;
+    --warning-bg: #33280f;
+    --warning-ink: #f5c460;
+    --critical: #e66767;
+    --shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0d0d0d;
+  --paper-dot: rgba(255, 255, 255, 0.06);
+  --surface: #171716;
+  --surface-sunken: #1f1f1d;
+  --surface-hover: rgba(255, 255, 255, 0.04);
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --ink-muted: #8f8d86;
+  --rule: #2a2a28;
+  --rule-strong: #3d3d3a;
+  --ring: rgba(255, 255, 255, 0.1);
+  --focus: #3987e5;
+  --inverse-bg: #f0efec;
+  --inverse-ink: #0d0d0d;
+  --series-actual: #3987e5;
+  --series-forecast: #d95926;
+  --series-band: rgba(217, 89, 38, 0.18);
+  --series-revision: #55544f;
+  --chart-grid: #262624;
+  --chart-axis: #3d3d3a;
+  --diverge-over: #e66767;
+  --diverge-under: #3987e5;
+  --heat-0: #1b2533;
+  --heat-1: #184f95;
+  --heat-2: #1c5cab;
+  --heat-3: #256abf;
+  --heat-4: #3987e5;
+  --heat-5: #6da7ec;
+  --good: #0ca30c;
+  --warning-bg: #33280f;
+  --warning-ink: #f5c460;
+  --critical: #e66767;
+  --shadow-pop: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+}

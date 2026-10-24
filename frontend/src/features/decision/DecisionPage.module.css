@@ -1,0 +1,80 @@
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.chartCard {
+  min-width: 0;
+}
+
+.legendRow {
+  margin-bottom: var(--space-4);
+}
+
+.stale {
+  opacity: 0.55;
+  transition: opacity 200ms var(--ease-out);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-2);
+  cursor: pointer;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  background: var(--surface);
+}
+
+.toggle input {
+  accent-color: var(--ink);
+  margin: 0;
+}
+
+.summaryGrid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr 1fr;
+}
+
+.summaryGrid > * {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+
+.summaryGrid > *:nth-last-child(-n + 2) {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.summaryCard :global(p) {
+  overflow-wrap: anywhere;
+}
+
+.flushBody {
+  padding: 0;
+}
+
+@media (max-width: 1080px) {
+  .mainGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .summaryGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .summaryGrid > *:nth-last-child(-n + 3) {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .summaryGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

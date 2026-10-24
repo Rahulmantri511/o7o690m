@@ -1,0 +1,58 @@
+.strip {
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.cell {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 18px;
+  border-right: 1px solid var(--rule);
+  white-space: nowrap;
+}
+
+.cell:first-child {
+  padding-left: 0;
+}
+
+.cell:last-child {
+  border-right: 0;
+}
+
+.cell dt {
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10.5px;
+}
+
+.cell dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.unit {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.flag {
+  color: var(--diverge-over);
+  font-size: 9px;
+}

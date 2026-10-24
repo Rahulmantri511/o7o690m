@@ -1,0 +1,122 @@
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.key_line,
+.key_thin,
+.key_band,
+.key_square {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.key_line {
+  width: 18px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--key-color);
+}
+
+.key_thin {
+  width: 18px;
+  height: 1.5px;
+  background: var(--key-color);
+}
+
+.key_band {
+  width: 18px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--key-color);
+  outline: 1px solid color-mix(in srgb, var(--series-forecast) 35%, transparent);
+  outline-offset: -1px;
+}
+
+.key_square {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--key-color);
+}
+
+.tooltip {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-pop);
+  padding: 10px 12px;
+  min-width: 210px;
+  font-size: 12.5px;
+}
+
+.tooltipTitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.tooltip dl {
+  margin: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.tooltip dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tooltip dt {
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tooltip dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.emphasis {
+  border-top: 1px solid var(--rule);
+  padding-top: 5px;
+}
+
+.emphasis dd {
+  font-weight: 600;
+}
+
+.swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.tooltipFooter {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 11.5px;
+}

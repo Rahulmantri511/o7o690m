@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      # auto = live Elexon data with the bundled snapshot as fallback.
+      WINDSCOPE_DATA_MODE: ${WINDSCOPE_DATA_MODE:-auto}
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    restart: unless-stopped

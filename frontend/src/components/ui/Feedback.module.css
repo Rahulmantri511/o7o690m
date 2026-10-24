@@ -1,0 +1,121 @@
+.skeleton {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--surface-sunken) 0%,
+    var(--surface-hover) 50%,
+    var(--surface-sunken) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--ink-muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--series-forecast);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.error {
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+}
+
+.errorTitle {
+  font-weight: 600;
+}
+
+.errorTitle span {
+  color: var(--critical);
+}
+
+.errorMessage {
+  color: var(--ink-2);
+  font-size: 13.5px;
+}
+
+.retry {
+  margin-top: var(--space-2);
+  border: 1px solid var(--rule-strong);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.retry:hover {
+  background: var(--surface-hover);
+}
+
+.callout {
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-2);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+}
+
+.warning {
+  background: var(--warning-bg);
+  border-color: color-mix(in srgb, var(--warning-ink) 22%, transparent);
+}
+
+.calloutLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.warning .calloutLabel {
+  color: var(--warning-ink);
+}
+
+.calloutBody {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 78ch;
+}
+
+.calloutBody strong {
+  font-weight: 600;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
